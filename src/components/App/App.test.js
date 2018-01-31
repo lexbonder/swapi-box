@@ -16,5 +16,6 @@ it('should match the snapshot', () => {
 
 it('should render a people component when the people button is clicked', () => {
   const wrapper = shallow(<App />);
-  
+
+  // wrapper.instance().showPeople()
 })
