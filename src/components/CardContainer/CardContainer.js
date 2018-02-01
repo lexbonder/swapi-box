@@ -1,9 +1,15 @@
 import React from 'react';
+import Card from '../Card/Card'
+// import People from '../People/People'; 
 
-const CardContainer = () => {
+const CardContainer = ({chosenCategory, cleanedData}) => {
+  const cardsToRender = cleanedData.map((datapoint, index) => 
+    <Card key={index} cardInfo={datapoint} /> )
+
   return(
     <div>
-      <h1>Select a File</h1>
+      <h1>{chosenCategory}</h1>
+      {cardsToRender}
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import Control from '../Control/Control';
+import DataCleaner from '../../helper.js';
 import './App.css';
 
 class App extends Component {
@@ -8,27 +9,34 @@ class App extends Component {
     super();
     this.state = {
       openingCrawl: '',
-      cardsToShow: ''
+      chosenCategory: '',
+      cleanedData: [],
+      cleaner: {},
     }
   }
 
   async componentDidMount() {
-    const initialFetch = await fetch('https://swapi.co/api/films/4/');
+    const cleaner = new DataCleaner()
+    const episodeNumber = Math.ceil(Math.random() * 7)
+    const initialFetch = await fetch(`https://swapi.co/api/films/${episodeNumber}/`);
     const object = await initialFetch.json();
-    this.setState({openingCrawl: object.opening_crawl});
+    this.setState({openingCrawl: object.opening_crawl, cleaner});
   }
 
-  getCards() {
+  getCards = async (event) => {
     // Have button give variable
+    const chosenCategory = event.target.name;
     // api call starwars/whaterver/${variable}/1/ <-- dry code
+    const initialFetch = await fetch(`https://swapi.co/api/${chosenCategory}/`)
+    const foundData = await initialFetch.json()
     // pass data through cleaner
+    // dataCleaner(chosenCategory, foundData)
+    const cleanedData = await this.state.cleaner.cleanData(chosenCategory, foundData.results)
+    this.setState({ chosenCategory, cleanedData })
     // print it on screen
 
     // May only need Cards component..
     // save data locally somewhere? maybe just copy selected objects into state.
-    // Array or object?? Object is better/faster/dryer
-
-    //focus on only making people work. do the rest after your freakin code works...
   }
 
   render() {
@@ -37,7 +45,9 @@ class App extends Component {
         <h1>SWAPIbox</h1>
         <h3>{this.state.openingCrawl}</h3>
         <Control getCards={this.getCards} />
-        <CardContainer cardsToShow={this.state.cardsToShow} />
+        <CardContainer
+          chosenCategory={this.state.chosenCategory}
+          cleanedData={this.state.cleanedData} />
       </div>
     );
   }
