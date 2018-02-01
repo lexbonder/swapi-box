@@ -2,11 +2,11 @@ class DataCleaner {
   cleanData = async (category, rawArray) => {
     switch (category) {
       case 'people' :
-        return await this.peopleCleaner(rawArray);
+        return await this.peopleCleaner(rawArray, category);
       case 'vehicles' :
-        return await this.vehicleCleaner(rawArray);
+        return await this.vehicleCleaner(rawArray, category);
       case 'planets' :
-        return await this.planetCleaner(rawArray);
+        return await this.planetCleaner(rawArray, category);
       default :
         return;
     }
@@ -18,11 +18,12 @@ class DataCleaner {
     return result;
   }
 
-  peopleCleaner(people){
+  peopleCleaner(people, category){
     const cleanedPeople = people.map( async (person) => {
       const homeworldData = await this.getWorldAndPop(person.homeworld)
       const species = await this.getSpecies(person.species)
       return await {
+        category,
         name: person.name,
         species,
         ...homeworldData
@@ -41,9 +42,10 @@ class DataCleaner {
     return name
   }
 
-  vehicleCleaner(vehicles){
+  vehicleCleaner(vehicles, category){
     const cleanedVehicles = vehicles.map(vehicle => {
       return {
+        category,
         name: vehicle.name,
         model: vehicle.model,
         vehicleClass: vehicle.vehicle_class,
@@ -53,10 +55,11 @@ class DataCleaner {
     return cleanedVehicles
   }
 
-  planetCleaner(planets){
+  planetCleaner(planets, category){
     const cleanedPlanets = planets.map( async (planet) => {
       const residents = await this.getResidents(planet.residents)
       return await {
+        category,
         name: planet.name,
         terrain: planet.terrain,
         population: planet.population,

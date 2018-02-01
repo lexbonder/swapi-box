@@ -12,10 +12,11 @@ class App extends Component {
       chosenCategory: '',
       cleanedData: [],
       cleaner: {},
+      favorites: [],
     }
   }
 
-  async componentDidMount() {
+  componentDidMount = async () => {
     const cleaner = new DataCleaner()
     const episodeNumber = Math.ceil(Math.random() * 7)
     const initialFetch = await fetch(`https://swapi.co/api/films/${episodeNumber}/`);
@@ -23,9 +24,28 @@ class App extends Component {
     this.setState({openingCrawl: object.opening_crawl, cleaner});
   }
 
-  getCards = async (event) => {
-    // Have button give variable
+  addToFavorites = (event) => {
+    const clicked = event.target.name
+    const newFavorite = this.state.cleanedData.find(object => object.name === clicked)
+    this.setState({favorites: [...this.state.favorites, newFavorite]})
+  }
+
+  handleClick = (event) => {
     const chosenCategory = event.target.name;
+    if (chosenCategory === 'favorites') {
+      this.getFavorites(chosenCategory)
+    }
+    else {
+      this.getCards(chosenCategory)
+    }
+  }
+
+  getFavorites = (chosenCategory) => {
+    this.setState({chosenCategory, cleanedData: this.state.favorites})
+  }
+
+  getCards = async (chosenCategory) => {
+    // Have button give variable
     // api call starwars/whaterver/${variable}/1/ <-- dry code
     const initialFetch = await fetch(`https://swapi.co/api/${chosenCategory}/`)
     const foundData = await initialFetch.json()
@@ -44,10 +64,14 @@ class App extends Component {
       <div className="App">
         <h1>SWAPIbox</h1>
         <h3>{this.state.openingCrawl}</h3>
-        <Control getCards={this.getCards} />
+        <Control
+          handleClick={this.handleClick}
+        />
         <CardContainer
           chosenCategory={this.state.chosenCategory}
-          cleanedData={this.state.cleanedData} />
+          cleanedData={this.state.cleanedData}
+          addToFavorites={this.addToFavorites}
+        />
       </div>
     );
   }

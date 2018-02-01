@@ -2,9 +2,13 @@ import React from 'react';
 import Card from '../Card/Card'
 // import People from '../People/People'; 
 
-const CardContainer = ({chosenCategory, cleanedData}) => {
+const CardContainer = ({chosenCategory, cleanedData, addToFavorites}) => {
   const cardsToRender = cleanedData.map((datapoint, index) => 
-    <Card key={index} cardInfo={datapoint} category={chosenCategory} /> )
+    <Card
+      key={index}
+      cardInfo={datapoint}
+      addToFavorites={addToFavorites}
+    /> )
 
   return(
     <div>
