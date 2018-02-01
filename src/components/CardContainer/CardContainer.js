@@ -4,7 +4,7 @@ import Card from '../Card/Card'
 
 const CardContainer = ({chosenCategory, cleanedData}) => {
   const cardsToRender = cleanedData.map((datapoint, index) => 
-    <Card key={index} cardInfo={datapoint} /> )
+    <Card key={index} cardInfo={datapoint} category={chosenCategory} /> )
 
   return(
     <div>

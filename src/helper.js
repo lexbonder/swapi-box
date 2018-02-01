@@ -4,11 +4,9 @@ class DataCleaner {
       case 'people' :
         return await this.peopleCleaner(rawArray);
       case 'vehicles' :
-        // vehicleCleaner(rawArray);
-        break;
+        return await this.vehicleCleaner(rawArray);
       case 'planets' :
-        // planetCleaner(rawArray);
-        break;
+        return await this.planetCleaner(rawArray);
       default :
         return;
     }
@@ -20,8 +18,8 @@ class DataCleaner {
     return result;
   }
 
-  peopleCleaner(peopleArray){
-    const stuff = peopleArray.map( async (person) => {
+  peopleCleaner(people){
+    const cleanedPeople = people.map( async (person) => {
       const homeworldData = await this.getWorldAndPop(person.homeworld)
       const species = await this.getSpecies(person.species)
       return await {
@@ -30,7 +28,7 @@ class DataCleaner {
         ...homeworldData
       }
     })
-    return Promise.all(stuff)
+    return Promise.all(cleanedPeople)
   }
 
   async getWorldAndPop(homeworldUrl) {
@@ -43,5 +41,42 @@ class DataCleaner {
     return name
   }
 
+  vehicleCleaner(vehicles){
+    const cleanedVehicles = vehicles.map(vehicle => {
+      return {
+        name: vehicle.name,
+        model: vehicle.model,
+        vehicleClass: vehicle.vehicle_class,
+        numOfPassengers: vehicle.passengers,
+      }
+    })
+    return cleanedVehicles
+  }
+
+  planetCleaner(planets){
+    const cleanedPlanets = planets.map( async (planet) => {
+      const residents = await this.getResidents(planet.residents)
+      return await {
+        name: planet.name,
+        terrain: planet.terrain,
+        population: planet.population,
+        climate: planet.climate,
+        residents,
+      }
+    })
+    return Promise.all(cleanedPlanets) 
+  }
+
+  async getResidents(residentUrls) {
+    if (!residentUrls.length) {
+      return ['None']
+    } else {
+      const names = await residentUrls.map(async (residentUrl) => {
+        const {name} = await this.fetchApi(residentUrl)
+        return name;
+      })
+      return Promise.all(names)
+    }
+  }
 }
 export default DataCleaner;
