@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Control = ({ getCards }) => {
+const Control = ({ handleClick, numFav }) => {
   return(
     <div>
-        <button>View Favorites</button>
-        <button onClick={getCards} name='people'>People</button>
-        <button onClick={getCards} name='planets'>Planets</button>
-        <button onClick={getCards} name='vehicles'>Vehicles</button>
+        <button onClick={handleClick} name='favorites'>View Favorites ({numFav})</button>
+        <button onClick={handleClick} name='people'>People</button>
+        <button onClick={handleClick} name='planets'>Planets</button>
+        <button onClick={handleClick} name='vehicles'>Vehicles</button>
     </div>
   )
 }

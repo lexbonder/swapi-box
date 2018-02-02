@@ -1,11 +1,12 @@
 import React from 'react'
 
-const OpeningText = ({title, episode, text}) => {
+const OpeningText = ({openingText}) => {
+  const {title, episode, crawl, year} = openingText;
   return(
     <div>
-      <h2>Episode {episode}</h2>
-      <h1>{title}</h1>
-      <p>{text}</p>
+      <h1>Episode {episode}</h1>
+      <h2>{crawl}</h2>
+      <p>{title} - {year}</p>
     </div>
   )
 }
