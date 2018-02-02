@@ -1,4 +1,8 @@
 class DataCleaner {
+  constructor(fetchApi) {
+    this.fetchApi = fetchApi;
+  }
+
   cleanData = async (category, rawArray) => {
     switch (category) {
       case 'people' :
@@ -12,12 +16,6 @@ class DataCleaner {
     }
   }
 
-  async fetchApi(url) {
-    const initialFetch = await fetch(url)
-    const result = await initialFetch.json()
-    return result;
-  }
-
   peopleCleaner(people, category){
     const cleanedPeople = people.map( async (person) => {
       const homeworldData = await this.getWorldAndPop(person.homeworld)
@@ -26,7 +24,7 @@ class DataCleaner {
         category,
         name: person.name,
         species,
-        ...homeworldData
+        ...homeworldData,
       }
     })
     return Promise.all(cleanedPeople)

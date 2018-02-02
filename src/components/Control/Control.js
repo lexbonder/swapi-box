@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Control = ({ handleClick, displayFavorites }) => {
+const Control = ({ handleClick, numFav }) => {
   return(
     <div>
-        <button onClick={handleClick} name='favorites'>View Favorites</button>
+        <button onClick={handleClick} name='favorites'>View Favorites ({numFav})</button>
         <button onClick={handleClick} name='people'>People</button>
         <button onClick={handleClick} name='planets'>Planets</button>
         <button onClick={handleClick} name='vehicles'>Vehicles</button>

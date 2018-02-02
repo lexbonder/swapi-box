@@ -1,24 +1,24 @@
 import React from 'react';
 
-const Card = ({cardInfo, addToFavorites}) => {
+const Card = ({cardInfo, toggleFavorite}) => {
   switch(cardInfo.category){
     case 'people' :
-      return renderPeopleCards(cardInfo, addToFavorites);
+      return renderPeopleCards(cardInfo, toggleFavorite);
     case 'vehicles' :
-      return renderVehicleCards(cardInfo, addToFavorites);
+      return renderVehicleCards(cardInfo, toggleFavorite);
     case 'planets' :
-      return renderPlanetCards(cardInfo, addToFavorites);
+      return renderPlanetCards(cardInfo, toggleFavorite);
     default :
       return;
   }
 }
 
-const renderPeopleCards = (cardInfo, addToFavorites) => {
+const renderPeopleCards = (cardInfo, toggleFavorite) => {
   const {name, species, homeworld, population} = cardInfo;
   return (
     <div>
       <button
-        onClick={addToFavorites}
+        onClick={toggleFavorite}
         name={name}
       >
         Favorite
@@ -31,12 +31,12 @@ const renderPeopleCards = (cardInfo, addToFavorites) => {
   )
 }
 
-const renderVehicleCards = (cardInfo, addToFavorites) => {
+const renderVehicleCards = (cardInfo, toggleFavorite) => {
   const {name, model, vehicleClass, numOfPassengers} = cardInfo;
   return (
     <div>
       <button
-        onClick={addToFavorites}
+        onClick={toggleFavorite}
         name={name}
       >
         Favorite
@@ -49,14 +49,14 @@ const renderVehicleCards = (cardInfo, addToFavorites) => {
   )
 }
 
-const renderPlanetCards = (cardInfo, addToFavorites) => {
+const renderPlanetCards = (cardInfo, toggleFavorite) => {
   const {name, terrain, population, climate, residents} = cardInfo;
   const allResidents = residents.map((resident, index) => <li key={index}>{resident}</li>)
 
   return (
     <div>
       <button
-        onClick={addToFavorites}
+        onClick={toggleFavorite}
         name={name}
       >
         Favorite
