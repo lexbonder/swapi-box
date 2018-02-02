@@ -21,19 +21,10 @@ class App extends Component {
 
   componentDidMount = async () => {
     const cleaner = new DataCleaner(fetchApi)
-    const openingText = await this.getOpeningText()
-    this.setState({openingText, cleaner});
-  }
-
-  getOpeningText = async () => {
     const episodeNumber = Math.ceil(Math.random() * 7)
     const movieInfo = await fetchApi(`https://swapi.co/api/films/${episodeNumber}/`)
-    return {
-      title: movieInfo.title,
-      episode: movieInfo.episode_id,
-      crawl: movieInfo.opening_crawl,
-      year: movieInfo.release_date,
-    }
+    const openingText = await cleaner.cleanData('opening', movieInfo)
+    this.setState({openingText, cleaner});
   }
 
   toggleFavorite = (event) => {
