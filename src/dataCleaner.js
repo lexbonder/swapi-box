@@ -11,8 +11,19 @@ class DataCleaner {
         return await this.vehicleCleaner(rawArray, category);
       case 'planets' :
         return await this.planetCleaner(rawArray, category);
+      case 'opening' :
+        return await this.getOpeningText(rawArray)
       default :
         return;
+    }
+  }
+
+  getOpeningText = async (movieInfo) => {
+    return {
+      title: movieInfo.title,
+      episode: movieInfo.episode_id,
+      crawl: movieInfo.opening_crawl,
+      year: movieInfo.release_date,
     }
   }
 
