@@ -18,7 +18,7 @@ class DataCleaner {
     }
   }
 
-  getOpeningText = async (movieInfo) => {
+  getOpeningText = (movieInfo) => {
     return {
       title: movieInfo.title,
       episode: movieInfo.episode_id,
@@ -27,7 +27,7 @@ class DataCleaner {
     }
   }
 
-  peopleCleaner(people, category){
+  peopleCleaner = (people, category) => {
     const cleanedPeople = people.map( async (person) => {
       const homeworldData = await this.getWorldAndPop(person.homeworld)
       const species = await this.getSpecies(person.species)
@@ -41,18 +41,18 @@ class DataCleaner {
     return Promise.all(cleanedPeople)
   }
 
-  async getWorldAndPop(homeworldUrl) {
+  getWorldAndPop = async (homeworldUrl) => {
     const {name, population} = await this.fetchApi(homeworldUrl)
     return {homeworld: name, population}
   }
 
-  async getSpecies(speciesUrl) {
+  getSpecies = async (speciesUrl) => {
     const {name} = await this.fetchApi(speciesUrl)
     return name
   }
 
-  vehicleCleaner(vehicles, category){
-    const cleanedVehicles = vehicles.map(vehicle => {
+  vehicleCleaner = (vehicles, category) => {
+    return vehicles.map(vehicle => {
       return {
         category,
         name: vehicle.name,
@@ -61,10 +61,9 @@ class DataCleaner {
         numOfPassengers: vehicle.passengers,
       }
     })
-    return cleanedVehicles
   }
 
-  planetCleaner(planets, category){
+  planetCleaner = (planets, category) => {
     const cleanedPlanets = planets.map( async (planet) => {
       const residents = await this.getResidents(planet.residents)
       return await {
@@ -79,7 +78,7 @@ class DataCleaner {
     return Promise.all(cleanedPlanets) 
   }
 
-  async getResidents(residentUrls) {
+  getResidents = async (residentUrls) => {
     if (!residentUrls.length) {
       return ['None']
     } else {
@@ -91,4 +90,5 @@ class DataCleaner {
     }
   }
 }
+
 export default DataCleaner;

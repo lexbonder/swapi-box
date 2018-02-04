@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const OpeningText = ({openingText}) => {
   const {title, episode, crawl, year} = openingText;
@@ -9,6 +10,17 @@ const OpeningText = ({openingText}) => {
       <p>{title} - {year}</p>
     </div>
   )
+}
+
+const { shape, string, number } = PropTypes
+
+OpeningText.propTypes = {
+  openingText: shape({
+    title: string,
+    episode: number,
+    crawl: string,
+    year: string
+  })
 }
 
 export default OpeningText;

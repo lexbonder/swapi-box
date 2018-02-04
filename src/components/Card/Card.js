@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Card = ({cardInfo, toggleFavorite}) => {
   switch(cardInfo.category){
@@ -71,6 +72,13 @@ const renderPlanetCards = (cardInfo, toggleFavorite) => {
       </ul>
     </div>
   )
+}
+
+const { object, func} = PropTypes;
+
+Card.propTypes = {
+  cardInfo: object,
+  toggleFavorite: func
 }
 
 export default Card;

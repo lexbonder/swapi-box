@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../Card/Card'
-// import People from '../People/People'; 
+import PropTypes from 'prop-types';
+import Card from '../Card/Card';
 
 const CardContainer = ({chosenCategory, cleanedData, toggleFavorite}) => {
   let noResults;
@@ -24,6 +24,14 @@ const CardContainer = ({chosenCategory, cleanedData, toggleFavorite}) => {
       {cardsToRender}
     </div>
   )
+}
+
+const { string, arrayOf, func, object } = PropTypes;
+
+CardContainer.propTypes = {
+  chosenCategory: string,
+  cleanedData: arrayOf(object),
+  toggleFavorite: func
 }
 
 export default CardContainer;

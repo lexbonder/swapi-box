@@ -24,7 +24,6 @@ ShallowWrapper {
         <OpeningText
           openingText={Object {}}
 />,
-        <h3 />,
         <Control
           handleClick={[Function]}
           numFav={0}
@@ -60,17 +59,6 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "h3",
       },
       Object {
         "instance": null,
@@ -113,7 +101,6 @@ ShallowWrapper {
           <OpeningText
             openingText={Object {}}
 />,
-          <h3 />,
           <Control
             handleClick={[Function]}
             numFav={0}
@@ -149,17 +136,6 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "h3",
         },
         Object {
           "instance": null,
