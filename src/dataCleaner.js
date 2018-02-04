@@ -43,7 +43,6 @@ class DataCleaner {
 
   getWorldAndPop = async (homeworldUrl) => {
     const {name, population} = await this.fetchApi(homeworldUrl)
-    debugger;
     return {homeworld: name, population}
   }
 

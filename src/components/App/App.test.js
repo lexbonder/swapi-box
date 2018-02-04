@@ -2,8 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import App from './App';
+import mockData from '../../mockData'
 
 describe('App', () => {  
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />)
+  })
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
@@ -11,19 +18,116 @@ describe('App', () => {
   });
 
   it('should match the snapshot', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('When getCards is run it should set the name of the button in state', () => {
-    const wrapper = shallow(<App />);
-    // ----- is this right???? It get's the test passing..
+  it('should have a default state', () => {
+    expect(wrapper.state()).toEqual({
+      chosenCategory: '',
+      cleanedData: [],
+      favorites: [],
+      numFav: 0,
+      openingText: {}
+    })
+  })
+  
+  it('when the compnent mounts it calls getMovieCrawl', () => {
+    
+    wrapper.instance().getMovieCrawl = jest.fn()
+    wrapper.instance().componentDidMount()
 
-    console.log(wrapper.state())
-    // expect(wrapper.state().chosenCategory).toEqual('people')
+    expect(wrapper.instance().getMovieCrawl).toHaveBeenCalled()
   })
 
+  it('calling getMovieCrawl sets a cleaned movie object into state', async () => {
+    await wrapper.instance().getMovieCrawl(2)
+    const expectedData = {
+      title: 'The Empire Strikes Back',
+      episode: 5,
+      crawl: 'It is a dark time for the\r\nRebellion. Although the Death\r\nStar has been destroyed,\r\nImperial troops have driven the\r\nRebel forces from their hidden\r\nbase and pursued them across\r\nthe galaxy.\r\n\r\nEvading the dreaded Imperial\r\nStarfleet, a group of freedom\r\nfighters led by Luke Skywalker\r\nhas established a new secret\r\nbase on the remote ice world\r\nof Hoth.\r\n\r\nThe evil lord Darth Vader,\r\nobsessed with finding young\r\nSkywalker, has dispatched\r\nthousands of remote probes into\r\nthe far reaches of space....',
+      year: '1980-05-17'
+    }
 
+    expect(wrapper.state().openingText).toEqual(expectedData)
+  })
+
+  describe('toggleFavorite', () => {
+    it('should run addFavorite if the clicked object is not in state', () => {
+      wrapper.instance().addFavorite = jest.fn()
+      wrapper.instance().toggleFavorite({target: {name: 'Luke Skywalker'}})
+
+      expect(wrapper.instance().addFavorite).toHaveBeenCalled()
+    })
+
+    it('should run removeFavorite if the clicked object is already in state', () => {
+      wrapper.instance().removeFavorite = jest.fn()
+      wrapper.setState({favorites: [{name: 'Luke Skywalker'}]})
+
+      wrapper.instance().toggleFavorite({target: {name: 'Luke Skywalker'}})
+    
+      expect(wrapper.instance().removeFavorite).toHaveBeenCalled()
+    })
+
+    it('addFavorite should add an object into state and increase the counter', () => {
+      wrapper.instance().addFavorite({name: 'Luke Skywalker'})
+
+      expect(wrapper.state().favorites).toEqual([{name: 'Luke Skywalker'}])
+      expect(wrapper.state().numFav).toEqual(1)
+    })
+
+    it('removeFavorite should remove an object from state and decrease the counter', () => {
+      wrapper.instance().addFavorite({name: 'Luke Skywalker'})
+      wrapper.instance().addFavorite({name: 'Chewbacca'})
+
+      wrapper.instance().removeFavorite({name: 'Luke Skywalker'})
+
+      expect(wrapper.state().favorites).toEqual([{name: 'Chewbacca'}])
+      expect(wrapper.state().numFav).toEqual(1)
+    })
+  })
+
+  describe('handleClick', () => {
+    it('should run getFavorites if the chosen category is favorites', () => {
+      wrapper.instance().getFavorites = jest.fn()
+      wrapper.instance().handleClick({target: {name: 'favorites'}})
+
+      expect(wrapper.instance().getFavorites).toHaveBeenCalled()
+    })
+
+    it('should run getCards if the chosen category is anything other than favorites', () => {
+      wrapper.instance().getCards = jest.fn()
+      
+      wrapper.instance().handleClick({target: {name: 'people'}})
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith('people')
+      
+      wrapper.instance().handleClick({target: {name: 'vehicles'}})
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith('vehicles')
+      
+      wrapper.instance().handleClick({target: {name: 'planets'}})
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith('planets')
+    })
+  })
+
+  describe('getFavorites', () => {
+    it('should set the chosen category and cleaned data into state', () => {
+      wrapper.instance().addFavorite({name: 'Luke Skywalker'})
+      wrapper.instance().addFavorite({name: 'Chewbacca'})
+      
+      wrapper.instance().getFavorites('favorites')
+
+      expect(wrapper.state().cleanedData).toEqual([{name: 'Luke Skywalker'},{name: 'Chewbacca'}])
+      expect(wrapper.state().chosenCategory).toEqual('favorites')
+    })
+  })
+
+  describe('getCards', () => {
+    it('should set the state depending on the button pressed', async () => {
+      await wrapper.instance().getCards('people')
+
+      expect(wrapper.state().chosenCategory).toEqual('people')
+      expect(wrapper.state().cleanedData).toEqual(mockData.cleanedPeopleData)
+    })
+  })
 })
 
 // // Async Tests -----

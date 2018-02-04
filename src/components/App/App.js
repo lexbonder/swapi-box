@@ -13,18 +13,21 @@ class App extends Component {
       openingText: {},
       chosenCategory: '',
       cleanedData: [],
-      cleaner: {},
       favorites: [],
       numFav: 0,
     }
+    this.cleaner = new DataCleaner(fetchApi)
   }
 
-  componentDidMount = async () => {
-    const cleaner = new DataCleaner(fetchApi)
+  componentDidMount = () => {
     const episodeNumber = Math.ceil(Math.random() * 7)
+    this.getMovieCrawl(episodeNumber)
+  }
+
+  getMovieCrawl = async (episodeNumber) => {
     const movieInfo = await fetchApi(`https://swapi.co/api/films/${episodeNumber}/`)
-    const openingText = await cleaner.cleanData('opening', movieInfo)
-    this.setState({openingText, cleaner});
+    const openingText = await this.cleaner.cleanData('opening', movieInfo)
+    this.setState({openingText});
   }
 
   toggleFavorite = (event) => {
@@ -65,7 +68,7 @@ class App extends Component {
 
   getCards = async (chosenCategory) => {
     const {results} = await fetchApi(`https://swapi.co/api/${chosenCategory}/`)
-    const cleanedData = await this.state.cleaner.cleanData(chosenCategory, results)
+    const cleanedData = await this.cleaner.cleanData(chosenCategory, results)
     this.setState({ chosenCategory, cleanedData })
   }
 

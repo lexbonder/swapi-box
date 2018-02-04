@@ -1,5 +1,6 @@
 const mockData = {
-  movieData: {
+  movieData:
+    {
     "title": "The Empire Strikes Back",
     "episode_id": 5,
     "opening_crawl": "It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy. Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth. The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space....",
@@ -97,7 +98,59 @@ const mockData = {
     "created": "2014-12-09T13:50:49.641000Z",
     "edited": "2014-12-21T20:48:04.175778Z",
     "url": "https://swapi.co/api/planets/1/"
-  }]
+  }],
+  cleanedPeopleData:[
+    { category: 'people',
+      name: 'Luke Skywalker',
+      species: 'Human',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'C-3PO',
+      species: 'Droid',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'R2-D2',
+      species: 'Droid',
+      homeworld: 'Naboo',
+      population: '4500000000' },
+    { category: 'people',
+      name: 'Darth Vader',
+      species: 'Human',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'Leia Organa',
+      species: 'Human',
+      homeworld: 'Alderaan',
+      population: '2000000000' },
+    { category: 'people',
+      name: 'Owen Lars',
+      species: 'Human',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'Beru Whitesun lars',
+      species: 'Human',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'R5-D4',
+      species: 'Droid',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'Biggs Darklighter',
+      species: 'Human',
+      homeworld: 'Tatooine',
+      population: '200000' },
+    { category: 'people',
+      name: 'Obi-Wan Kenobi',
+      species: 'Human',
+      homeworld: 'Stewjon',
+      population: 'unknown'}
+  ]
 }
 
 export default mockData;

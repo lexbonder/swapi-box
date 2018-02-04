@@ -102,7 +102,7 @@ describe('DataCleaner', () => {
       
       const mockCleanData = [{
         category: 'planets',
-        name: 'Tattooine',
+        name: 'Tatooine',
         terrain: "desert",
         population: "200000",
         climate: "arid",
@@ -110,6 +110,8 @@ describe('DataCleaner', () => {
       }]
 
       const cleanedData = await cleaner.planetCleaner(mockData.planetData, 'planets')
+
+      expect(cleanedData).toEqual(mockCleanData)
     })
 
     it('getResidents should return an array of residents names', async () => {
