@@ -77,7 +77,6 @@ class App extends Component {
       <div className="App">
         <h1>SWAPIbox</h1>
         <OpeningText openingText={this.state.openingText} />
-        <h3>{this.state.openingCrawl}</h3>
         <Control
           handleClick={this.handleClick}
           numFav={this.state.numFav}

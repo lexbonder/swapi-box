@@ -7,12 +7,10 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <OpeningText
     openingText={
         Object {
-            "openingText": Object {
-              "crawl": "The super long intro...",
-              "eipsode": "4",
-              "title": "Return of the Jedi",
-              "year": "04/15/1990",
-            },
+            "crawl": "The super long intro...",
+            "episode": 4,
+            "title": "Return of the Jedi",
+            "year": "04/15/1990",
           }
     }
 />,
@@ -31,10 +29,15 @@ ShallowWrapper {
       "children": Array [
         <h1>
           Episode 
+          4
 </h1>,
-        <h2 />,
+        <h2>
+          The super long intro...
+</h2>,
         <p>
+          Return of the Jedi
            - 
+          04/15/1990
 </p>,
       ],
     },
@@ -47,13 +50,13 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Episode ",
-            undefined,
+            4,
           ],
         },
         "ref": null,
         "rendered": Array [
           "Episode ",
-          undefined,
+          4,
         ],
         "type": "h1",
       },
@@ -62,10 +65,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": "The super long intro...",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "The super long intro...",
         "type": "h2",
       },
       Object {
@@ -74,16 +77,16 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            undefined,
+            "Return of the Jedi",
             " - ",
-            undefined,
+            "04/15/1990",
           ],
         },
         "ref": null,
         "rendered": Array [
-          undefined,
+          "Return of the Jedi",
           " - ",
-          undefined,
+          "04/15/1990",
         ],
         "type": "p",
       },
@@ -99,10 +102,15 @@ ShallowWrapper {
         "children": Array [
           <h1>
             Episode 
+            4
 </h1>,
-          <h2 />,
+          <h2>
+            The super long intro...
+</h2>,
           <p>
+            Return of the Jedi
              - 
+            04/15/1990
 </p>,
         ],
       },
@@ -115,13 +123,13 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Episode ",
-              undefined,
+              4,
             ],
           },
           "ref": null,
           "rendered": Array [
             "Episode ",
-            undefined,
+            4,
           ],
           "type": "h1",
         },
@@ -130,10 +138,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": "The super long intro...",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "The super long intro...",
           "type": "h2",
         },
         Object {
@@ -142,16 +150,16 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              undefined,
+              "Return of the Jedi",
               " - ",
-              undefined,
+              "04/15/1990",
             ],
           },
           "ref": null,
           "rendered": Array [
-            undefined,
+            "Return of the Jedi",
             " - ",
-            undefined,
+            "04/15/1990",
           ],
           "type": "p",
         },
