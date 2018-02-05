@@ -75,17 +75,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SWAPIbox</h1>
         <OpeningText openingText={this.state.openingText} />
-        <Control
-          handleClick={this.handleClick}
-          numFav={this.state.numFav}
-        />
-        <CardContainer
-          chosenCategory={this.state.chosenCategory}
-          cleanedData={this.state.cleanedData}
-          toggleFavorite={this.toggleFavorite}
-        />
+        <section className='bottom-half'>
+          <Control
+            handleClick={this.handleClick}
+            numFav={this.state.numFav}
+          />
+          <CardContainer
+            chosenCategory={this.state.chosenCategory}
+            cleanedData={this.state.cleanedData}
+            toggleFavorite={this.toggleFavorite}
+            currentFavorites={this.state.favorites}
+          />
+        </section>
       </div>
     );
   }

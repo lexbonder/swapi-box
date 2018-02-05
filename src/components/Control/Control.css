@@ -1,0 +1,47 @@
+.Control {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.Control button { 
+  background-color: transparent;
+  border: 1px solid #feda4a;
+  color: #4A53FE;
+  font-size: 40px;
+  font-weight: bold;
+  outline: none;
+}
+
+.Control button:hover {
+  background-color: #feda4a;
+}
+
+button.clicked {
+  background-color: #feda4a;
+}
+
+@media screen and (max-width: 970px) {
+  .Control {
+    width: 87%;
+    margin: auto;
+  }
+
+  .Control button {
+    margin: 10px;
+    font-weight: normal;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .Control {
+    width: 448px;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .Control {
+    width: 100%;
+  }
+}

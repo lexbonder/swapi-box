@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './OpeningText.css'
 
 const OpeningText = ({openingText}) => {
   const {title, episode, crawl, year} = openingText;
   return(
-    <div>
-      <h1>Episode {episode}</h1>
-      <h2>{crawl}</h2>
-      <p>{title} - {year}</p>
+    <div className='fade'>
+      <div className='OpeningText'>
+        <div className='crawl'>
+          <div className='title'>
+            <p>Episode {episode}</p>
+            <h1>{title}</h1>
+          </div>
+          <h2>{crawl}</h2>
+          <h2>{year}</h2>
+        </div>
+      </div>
     </div>
   )
 }

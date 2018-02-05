@@ -1,0 +1,10 @@
+.CardContainer h1 {
+  text-align: center;
+  color: #feda4a;
+}
+
+.CardContainer section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -33,7 +33,7 @@ ShallowWrapper {
           name="Luke Skywalker"
           onClick={[Function]}
 >
-          Favorite
+          ★
 </button>,
         <h1>
           Luke Skywalker
@@ -51,6 +51,7 @@ ShallowWrapper {
           2000000
 </h2>,
       ],
+      "className": "Card undefined",
     },
     "ref": null,
     "rendered": Array [
@@ -59,12 +60,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorite",
+          "children": "★",
           "name": "Luke Skywalker",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorite",
+        "rendered": "★",
         "type": "button",
       },
       Object {
@@ -143,7 +144,7 @@ ShallowWrapper {
             name="Luke Skywalker"
             onClick={[Function]}
 >
-            Favorite
+            ★
 </button>,
           <h1>
             Luke Skywalker
@@ -161,6 +162,7 @@ ShallowWrapper {
             2000000
 </h2>,
         ],
+        "className": "Card undefined",
       },
       "ref": null,
       "rendered": Array [
@@ -169,12 +171,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorite",
+            "children": "★",
             "name": "Luke Skywalker",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorite",
+          "rendered": "★",
           "type": "button",
         },
         Object {
@@ -291,7 +293,7 @@ ShallowWrapper {
           name="Tatooine"
           onClick={[Function]}
 >
-          Favorite
+          ★
 </button>,
         <h1>
           Tatooine
@@ -309,20 +311,28 @@ ShallowWrapper {
           Most Unpleasant
 </h2>,
         <h2>
-          Residents:
+          Residents: 
+          3
 </h2>,
         <ul>
           <li>
-                    Luke
+                    <h3>
+                              Luke
+                    </h3>
           </li>
           <li>
-                    Leah
+                    <h3>
+                              Leah
+                    </h3>
           </li>
           <li>
-                    The Other Guy
+                    <h3>
+                              The Other Guy
+                    </h3>
           </li>
 </ul>,
       ],
+      "className": "Card undefined",
     },
     "ref": null,
     "rendered": Array [
@@ -331,12 +341,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorite",
+          "children": "★",
           "name": "Tatooine",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorite",
+        "rendered": "★",
         "type": "button",
       },
       Object {
@@ -406,10 +416,16 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Residents:",
+          "children": Array [
+            "Residents: ",
+            3,
+          ],
         },
         "ref": null,
-        "rendered": "Residents:",
+        "rendered": Array [
+          "Residents: ",
+          3,
+        ],
         "type": "h2",
       },
       Object {
@@ -419,13 +435,19 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <li>
-              Luke
+              <h3>
+                            Luke
+              </h3>
 </li>,
             <li>
-              Leah
+              <h3>
+                            Leah
+              </h3>
 </li>,
             <li>
-              The Other Guy
+              <h3>
+                            The Other Guy
+              </h3>
 </li>,
           ],
         },
@@ -436,10 +458,22 @@ ShallowWrapper {
             "key": "0",
             "nodeType": "host",
             "props": Object {
-              "children": "Luke",
+              "children": <h3>
+                Luke
+</h3>,
             },
             "ref": null,
-            "rendered": "Luke",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Luke",
+              },
+              "ref": null,
+              "rendered": "Luke",
+              "type": "h3",
+            },
             "type": "li",
           },
           Object {
@@ -447,10 +481,22 @@ ShallowWrapper {
             "key": "1",
             "nodeType": "host",
             "props": Object {
-              "children": "Leah",
+              "children": <h3>
+                Leah
+</h3>,
             },
             "ref": null,
-            "rendered": "Leah",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Leah",
+              },
+              "ref": null,
+              "rendered": "Leah",
+              "type": "h3",
+            },
             "type": "li",
           },
           Object {
@@ -458,10 +504,22 @@ ShallowWrapper {
             "key": "2",
             "nodeType": "host",
             "props": Object {
-              "children": "The Other Guy",
+              "children": <h3>
+                The Other Guy
+</h3>,
             },
             "ref": null,
-            "rendered": "The Other Guy",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "The Other Guy",
+              },
+              "ref": null,
+              "rendered": "The Other Guy",
+              "type": "h3",
+            },
             "type": "li",
           },
         ],
@@ -481,7 +539,7 @@ ShallowWrapper {
             name="Tatooine"
             onClick={[Function]}
 >
-            Favorite
+            ★
 </button>,
           <h1>
             Tatooine
@@ -499,20 +557,28 @@ ShallowWrapper {
             Most Unpleasant
 </h2>,
           <h2>
-            Residents:
+            Residents: 
+            3
 </h2>,
           <ul>
             <li>
-                        Luke
+                        <h3>
+                                    Luke
+                        </h3>
             </li>
             <li>
-                        Leah
+                        <h3>
+                                    Leah
+                        </h3>
             </li>
             <li>
-                        The Other Guy
+                        <h3>
+                                    The Other Guy
+                        </h3>
             </li>
 </ul>,
         ],
+        "className": "Card undefined",
       },
       "ref": null,
       "rendered": Array [
@@ -521,12 +587,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorite",
+            "children": "★",
             "name": "Tatooine",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorite",
+          "rendered": "★",
           "type": "button",
         },
         Object {
@@ -596,10 +662,16 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Residents:",
+            "children": Array [
+              "Residents: ",
+              3,
+            ],
           },
           "ref": null,
-          "rendered": "Residents:",
+          "rendered": Array [
+            "Residents: ",
+            3,
+          ],
           "type": "h2",
         },
         Object {
@@ -609,13 +681,19 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <li>
-                Luke
+                <h3>
+                                Luke
+                </h3>
 </li>,
               <li>
-                Leah
+                <h3>
+                                Leah
+                </h3>
 </li>,
               <li>
-                The Other Guy
+                <h3>
+                                The Other Guy
+                </h3>
 </li>,
             ],
           },
@@ -626,10 +704,22 @@ ShallowWrapper {
               "key": "0",
               "nodeType": "host",
               "props": Object {
-                "children": "Luke",
+                "children": <h3>
+                  Luke
+</h3>,
               },
               "ref": null,
-              "rendered": "Luke",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Luke",
+                },
+                "ref": null,
+                "rendered": "Luke",
+                "type": "h3",
+              },
               "type": "li",
             },
             Object {
@@ -637,10 +727,22 @@ ShallowWrapper {
               "key": "1",
               "nodeType": "host",
               "props": Object {
-                "children": "Leah",
+                "children": <h3>
+                  Leah
+</h3>,
               },
               "ref": null,
-              "rendered": "Leah",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Leah",
+                },
+                "ref": null,
+                "rendered": "Leah",
+                "type": "h3",
+              },
               "type": "li",
             },
             Object {
@@ -648,10 +750,22 @@ ShallowWrapper {
               "key": "2",
               "nodeType": "host",
               "props": Object {
-                "children": "The Other Guy",
+                "children": <h3>
+                  The Other Guy
+</h3>,
               },
               "ref": null,
-              "rendered": "The Other Guy",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "The Other Guy",
+                },
+                "ref": null,
+                "rendered": "The Other Guy",
+                "type": "h3",
+              },
               "type": "li",
             },
           ],
@@ -704,7 +818,7 @@ ShallowWrapper {
           name="RaceCar"
           onClick={[Function]}
 >
-          Favorite
+          ★
 </button>,
         <h1>
           RaceCar
@@ -722,6 +836,7 @@ ShallowWrapper {
           4
 </h2>,
       ],
+      "className": "Card undefined",
     },
     "ref": null,
     "rendered": Array [
@@ -730,12 +845,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorite",
+          "children": "★",
           "name": "RaceCar",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorite",
+        "rendered": "★",
         "type": "button",
       },
       Object {
@@ -814,7 +929,7 @@ ShallowWrapper {
             name="RaceCar"
             onClick={[Function]}
 >
-            Favorite
+            ★
 </button>,
           <h1>
             RaceCar
@@ -832,6 +947,7 @@ ShallowWrapper {
             4
 </h2>,
         ],
+        "className": "Card undefined",
       },
       "ref": null,
       "rendered": Array [
@@ -840,12 +956,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorite",
+            "children": "★",
             "name": "RaceCar",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorite",
+          "rendered": "★",
           "type": "button",
         },
         Object {

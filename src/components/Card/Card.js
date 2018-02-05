@@ -1,28 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Card.css'
 
-const Card = ({cardInfo, toggleFavorite}) => {
+const Card = ({cardInfo, toggleFavorite, currentFav}) => {
   switch(cardInfo.category){
     case 'people' :
-      return renderPeopleCards(cardInfo, toggleFavorite);
+      return renderPeopleCards(cardInfo, toggleFavorite, currentFav);
     case 'vehicles' :
-      return renderVehicleCards(cardInfo, toggleFavorite);
+      return renderVehicleCards(cardInfo, toggleFavorite, currentFav);
     case 'planets' :
-      return renderPlanetCards(cardInfo, toggleFavorite);
+      return renderPlanetCards(cardInfo, toggleFavorite, currentFav);
     default :
       return;
   }
 }
 
-const renderPeopleCards = (cardInfo, toggleFavorite) => {
+const renderPeopleCards = (cardInfo, toggleFavorite, currentFav) => {
   const {name, species, homeworld, population} = cardInfo;
   return (
-    <div>
+    <div className={`Card ${currentFav}`}>
       <button
         onClick={toggleFavorite}
         name={name}
       >
-        Favorite
+        &#9733;
       </button>
       <h1>{name}</h1>
       <h2>Species: {species}</h2>
@@ -32,15 +33,15 @@ const renderPeopleCards = (cardInfo, toggleFavorite) => {
   )
 }
 
-const renderVehicleCards = (cardInfo, toggleFavorite) => {
+const renderVehicleCards = (cardInfo, toggleFavorite, currentFav) => {
   const {name, model, vehicleClass, numOfPassengers} = cardInfo;
   return (
-    <div>
+    <div className={`Card ${currentFav}`}>
       <button
         onClick={toggleFavorite}
         name={name}
       >
-        Favorite
+        &#9733;
       </button>
       <h1>{name}</h1>
       <h2>Model: {model}</h2>
@@ -50,23 +51,23 @@ const renderVehicleCards = (cardInfo, toggleFavorite) => {
   )
 }
 
-const renderPlanetCards = (cardInfo, toggleFavorite) => {
+const renderPlanetCards = (cardInfo, toggleFavorite, currentFav) => {
   const {name, terrain, population, climate, residents} = cardInfo;
-  const allResidents = residents.map((resident, index) => <li key={index}>{resident}</li>)
+  const allResidents = residents.map((resident, index) => <li key={index}><h3>{resident}</h3></li>)
 
   return (
-    <div>
+    <div className={`Card ${currentFav}`}>
       <button
         onClick={toggleFavorite}
         name={name}
       >
-        Favorite
+        &#9733;
       </button>
       <h1>{name}</h1>
       <h2>Terrain: {terrain}</h2>
       <h2>Population: {population}</h2>
       <h2>Climate: {climate}</h2>
-      <h2>Residents:</h2>
+      <h2>Residents: {residents.length}</h2>
       <ul>
         {allResidents}
       </ul>
@@ -74,11 +75,12 @@ const renderPlanetCards = (cardInfo, toggleFavorite) => {
   )
 }
 
-const { object, func} = PropTypes;
+const { object, func, string } = PropTypes;
 
 Card.propTypes = {
   cardInfo: object,
-  toggleFavorite: func
+  toggleFavorite: func,
+  currentFav: string
 }
 
 export default Card;
