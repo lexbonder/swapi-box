@@ -22,6 +22,7 @@ class App extends Component {
   componentDidMount = () => {
     const episodeNumber = Math.ceil(Math.random() * 7);
     this.getMovieCrawl(episodeNumber);
+    this.getFavoritesFromStorage();
   }
 
   getMovieCrawl = async (episodeNumber) => {
@@ -50,18 +51,33 @@ class App extends Component {
   addFavorite = (clickedObject) => {
     let numFav = this.state.favorites.length;
     numFav++;
-    this.setState(
-      {favorites: [...this.state.favorites, clickedObject], numFav}
-    );
+    const favorites = [...this.state.favorites, clickedObject];
+    this.setState({favorites, numFav});
+    this.sendToLocalStorage(favorites);
   }
 
   removeFavorite = (clickedObject) => {
-    const remainingFavorites = this.state.favorites.filter(
+    const favorites = this.state.favorites.filter(
       object => object.name !== clickedObject.name
     );
-    let numFav = remainingFavorites.length;
-    this.setState({favorites: remainingFavorites, numFav});
+    let numFav = favorites.length;
+    this.setState({favorites, numFav});
+    this.sendToLocalStorage(favorites);
   }
+
+  sendToLocalStorage = (favorites) => {
+    const stringified = JSON.stringify(favorites);
+    localStorage.setItem('favorites', stringified);
+  }
+
+  getFavoritesFromStorage = () => {
+    if (localStorage.favorites) {
+      const fromLocal = localStorage.getItem('favorites');
+      const favorites = JSON.parse(fromLocal);
+      const numFav = favorites.length;
+      this.setState({favorites, numFav});
+    }
+  } 
 
   handleClick = (event) => {
     const chosenCategory = event.target.name;
