@@ -14,7 +14,9 @@ class App extends Component {
       chosenCategory: '',
       cleanedData: [],
       favorites: [],
-      numFav: 0
+      numFav: 0,
+      next: '',
+      previous: ''
     };
     this.cleaner = new DataCleaner(fetchApi);
   }
@@ -81,10 +83,11 @@ class App extends Component {
 
   handleClick = (event) => {
     const chosenCategory = event.target.name;
+    const url = `https://swapi.co/api/${chosenCategory}/`;
     if (chosenCategory === 'favorites') {
       this.getFavorites(chosenCategory);
     } else {
-      this.getCards(chosenCategory);
+      this.getCards(chosenCategory, url);
     }
   }
 
@@ -92,10 +95,17 @@ class App extends Component {
     this.setState({chosenCategory, cleanedData: this.state.favorites});
   }
 
-  getCards = async (chosenCategory) => {
-    const {results} = await fetchApi(`https://swapi.co/api/${chosenCategory}/`);
+  getCards = async (chosenCategory, url) => {
+    const {results, next, previous} = await fetchApi(url);
     const cleanedData = await this.cleaner.cleanData(chosenCategory, results);
-    this.setState({ chosenCategory, cleanedData });
+    this.setState({ chosenCategory, cleanedData, next, previous });
+  }
+
+  nextOrPrev = (event) => {
+    const page = event.target.name;
+    if (this.state[page]) {
+      this.getCards(this.state.chosenCategory, this.state[page]);
+    }
   }
 
   render() {
@@ -112,6 +122,7 @@ class App extends Component {
             cleanedData={this.state.cleanedData}
             toggleFavorite={this.toggleFavorite}
             currentFavorites={this.state.favorites}
+            nextOrPrev={this.nextOrPrev}
           />
         </section>
       </div>
