@@ -33,7 +33,9 @@ describe('App', () => {
       cleanedData: [],
       favorites: [],
       numFav: 0,
-      openingText: {}
+      openingText: {},
+      next: '',
+      previous: ''
     })
   })
   
@@ -104,13 +106,13 @@ describe('App', () => {
       wrapper.instance().getCards = jest.fn()
       
       wrapper.instance().handleClick({target: {name: 'people'}})
-      expect(wrapper.instance().getCards).toHaveBeenCalledWith('people')
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith('people', "https://swapi.co/api/people/")
       
       wrapper.instance().handleClick({target: {name: 'vehicles'}})
-      expect(wrapper.instance().getCards).toHaveBeenCalledWith('vehicles')
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith('vehicles', "https://swapi.co/api/vehicles/")
       
       wrapper.instance().handleClick({target: {name: 'planets'}})
-      expect(wrapper.instance().getCards).toHaveBeenCalledWith('planets')
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith('planets', "https://swapi.co/api/planets/")
     })
   })
 
@@ -128,12 +130,28 @@ describe('App', () => {
 
   describe('getCards', () => {
     it('should set the state depending on the button pressed', async () => {
-      await wrapper.instance().getCards('people')
+      await wrapper.instance().getCards('people', "https://swapi.co/api/people/")
 
       expect(wrapper.state().chosenCategory).toEqual('people')
       expect(wrapper.state().cleanedData).toEqual(mockData.cleanedPeopleData)
     })
   })
+
+  describe('nextOrPrev', () => {
+    it('should call getCards with the category and next url', () => {
+      
+      wrapper.instance().getCards = jest.fn()
+
+      const mockNextEvent = {target: {name: 'next'}}
+      wrapper.setState({next: 'www.coolurl.com', chosenCategory: 'stuff'})      
+      wrapper.instance().nextOrPrev(mockNextEvent)
+
+
+      expect(wrapper.instance().getCards).toHaveBeenCalledWith(wrapper.state().chosenCategory, wrapper.state().next)
+    })
+
+  })
+
 })
 
 // // Async Tests -----

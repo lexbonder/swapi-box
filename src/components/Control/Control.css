@@ -17,6 +17,10 @@
   background-color: #feda4a;
 }
 
+.Control button:active {
+  background-color: #dcb929;
+}
+
 button.clicked {
   background-color: #feda4a;
 }

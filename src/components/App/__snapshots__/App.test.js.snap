@@ -32,6 +32,7 @@ ShallowWrapper {
                     chosenCategory=""
                     cleanedData={Array []}
                     currentFavorites={Array []}
+                    nextOrPrev={[Function]}
                     toggleFavorite={[Function]}
           />
 </section>,
@@ -65,6 +66,7 @@ ShallowWrapper {
               chosenCategory=""
               cleanedData={Array []}
               currentFavorites={Array []}
+              nextOrPrev={[Function]}
               toggleFavorite={[Function]}
 />,
           ],
@@ -92,6 +94,7 @@ ShallowWrapper {
               "chosenCategory": "",
               "cleanedData": Array [],
               "currentFavorites": Array [],
+              "nextOrPrev": [Function],
               "toggleFavorite": [Function],
             },
             "ref": null,
@@ -125,6 +128,7 @@ ShallowWrapper {
                         chosenCategory=""
                         cleanedData={Array []}
                         currentFavorites={Array []}
+                        nextOrPrev={[Function]}
                         toggleFavorite={[Function]}
             />
 </section>,
@@ -158,6 +162,7 @@ ShallowWrapper {
                 chosenCategory=""
                 cleanedData={Array []}
                 currentFavorites={Array []}
+                nextOrPrev={[Function]}
                 toggleFavorite={[Function]}
 />,
             ],
@@ -185,6 +190,7 @@ ShallowWrapper {
                 "chosenCategory": "",
                 "cleanedData": Array [],
                 "currentFavorites": Array [],
+                "nextOrPrev": [Function],
                 "toggleFavorite": [Function],
               },
               "ref": null,

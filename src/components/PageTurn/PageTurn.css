@@ -1,0 +1,21 @@
+.PageTurn {
+  width: fit-content;
+  margin: auto;
+}
+
+.PageTurn button {
+  background-color: transparent;
+  border: 1px solid #feda4a;
+  color: #4A53FE;
+  font-size: 20px;
+  outline: none;
+  margin: 5px 30px;
+}
+
+.PageTurn button:hover {
+  background-color: #feda4a;
+}
+
+.PageTurn button:active {
+  background-color: #dcb929;
+}

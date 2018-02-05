@@ -28,115 +28,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <section>
-        <div />
-        <Card
-                cardInfo={Object {}}
-                currentFav=""
-                toggleFavorite={[Function]}
-        />
-        <Card
-                cardInfo={Object {}}
-                currentFav=""
-                toggleFavorite={[Function]}
-        />
-        <Card
-                cardInfo={Object {}}
-                currentFav=""
-                toggleFavorite={[Function]}
-        />
-</section>,
-      "className": "CardContainer",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div />,
-          Array [
-            <Card
-              cardInfo={Object {}}
-              currentFav=""
-              toggleFavorite={[Function]}
-/>,
-            <Card
-              cardInfo={Object {}}
-              currentFav=""
-              toggleFavorite={[Function]}
-/>,
-            <Card
-              cardInfo={Object {}}
-              currentFav=""
-              toggleFavorite={[Function]}
-/>,
-          ],
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "0",
-          "nodeType": "function",
-          "props": Object {
-            "cardInfo": Object {},
-            "currentFav": "",
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "1",
-          "nodeType": "function",
-          "props": Object {
-            "cardInfo": Object {},
-            "currentFav": "",
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "2",
-          "nodeType": "function",
-          "props": Object {
-            "cardInfo": Object {},
-            "currentFav": "",
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "section",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <section>
+      "children": Array [
+        false,
+        <section>
           <div />
           <Card
                     cardInfo={Object {}}
@@ -154,10 +48,13 @@ ShallowWrapper {
                     toggleFavorite={[Function]}
           />
 </section>,
-        "className": "CardContainer",
-      },
-      "ref": null,
-      "rendered": Object {
+      ],
+      "className": "CardContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -236,6 +133,121 @@ ShallowWrapper {
         ],
         "type": "section",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          false,
+          <section>
+            <div />
+            <Card
+                        cardInfo={Object {}}
+                        currentFav=""
+                        toggleFavorite={[Function]}
+            />
+            <Card
+                        cardInfo={Object {}}
+                        currentFav=""
+                        toggleFavorite={[Function]}
+            />
+            <Card
+                        cardInfo={Object {}}
+                        currentFav=""
+                        toggleFavorite={[Function]}
+            />
+</section>,
+        ],
+        "className": "CardContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div />,
+              Array [
+                <Card
+                  cardInfo={Object {}}
+                  currentFav=""
+                  toggleFavorite={[Function]}
+/>,
+                <Card
+                  cardInfo={Object {}}
+                  currentFav=""
+                  toggleFavorite={[Function]}
+/>,
+                <Card
+                  cardInfo={Object {}}
+                  currentFav=""
+                  toggleFavorite={[Function]}
+/>,
+              ],
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "function",
+              "props": Object {
+                "cardInfo": Object {},
+                "currentFav": "",
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "function",
+              "props": Object {
+                "cardInfo": Object {},
+                "currentFav": "",
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "function",
+              "props": Object {
+                "cardInfo": Object {},
+                "currentFav": "",
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "section",
+        },
+      ],
       "type": "div",
     },
   ],
@@ -271,59 +283,20 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <section>
-        <h1>
-                No Favorites Found
-        </h1>
-</section>,
-      "className": "CardContainer",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h1>
-            No Favorites Found
-</h1>,
-          Array [],
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "No Favorites Found",
-          },
-          "ref": null,
-          "rendered": "No Favorites Found",
-          "type": "h1",
-        },
-      ],
-      "type": "section",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <section>
+      "children": Array [
+        false,
+        <section>
           <h1>
                     No Favorites Found
           </h1>
 </section>,
-        "className": "CardContainer",
-      },
-      "ref": null,
-      "rendered": Object {
+      ],
+      "className": "CardContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -351,6 +324,57 @@ ShallowWrapper {
         ],
         "type": "section",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          false,
+          <section>
+            <h1>
+                        No Favorites Found
+            </h1>
+</section>,
+        ],
+        "className": "CardContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1>
+                No Favorites Found
+</h1>,
+              Array [],
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "No Favorites Found",
+              },
+              "ref": null,
+              "rendered": "No Favorites Found",
+              "type": "h1",
+            },
+          ],
+          "type": "section",
+        },
+      ],
       "type": "div",
     },
   ],
@@ -392,115 +416,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <section>
-        <div />
-        <Card
-                cardInfo={Object {}}
-                currentFav=""
-                toggleFavorite={[Function]}
-        />
-        <Card
-                cardInfo={Object {}}
-                currentFav=""
-                toggleFavorite={[Function]}
-        />
-        <Card
-                cardInfo={Object {}}
-                currentFav=""
-                toggleFavorite={[Function]}
-        />
-</section>,
-      "className": "CardContainer",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <div />,
-          Array [
-            <Card
-              cardInfo={Object {}}
-              currentFav=""
-              toggleFavorite={[Function]}
+      "children": Array [
+        <PageTurn
+          nextOrPrev={undefined}
 />,
-            <Card
-              cardInfo={Object {}}
-              currentFav=""
-              toggleFavorite={[Function]}
-/>,
-            <Card
-              cardInfo={Object {}}
-              currentFav=""
-              toggleFavorite={[Function]}
-/>,
-          ],
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "0",
-          "nodeType": "function",
-          "props": Object {
-            "cardInfo": Object {},
-            "currentFav": "",
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "1",
-          "nodeType": "function",
-          "props": Object {
-            "cardInfo": Object {},
-            "currentFav": "",
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "2",
-          "nodeType": "function",
-          "props": Object {
-            "cardInfo": Object {},
-            "currentFav": "",
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "section",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <section>
+        <section>
           <div />
           <Card
                     cardInfo={Object {}}
@@ -518,10 +438,23 @@ ShallowWrapper {
                     toggleFavorite={[Function]}
           />
 </section>,
-        "className": "CardContainer",
+      ],
+      "className": "CardContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "nextOrPrev": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -600,6 +533,133 @@ ShallowWrapper {
         ],
         "type": "section",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <PageTurn
+            nextOrPrev={undefined}
+/>,
+          <section>
+            <div />
+            <Card
+                        cardInfo={Object {}}
+                        currentFav=""
+                        toggleFavorite={[Function]}
+            />
+            <Card
+                        cardInfo={Object {}}
+                        currentFav=""
+                        toggleFavorite={[Function]}
+            />
+            <Card
+                        cardInfo={Object {}}
+                        currentFav=""
+                        toggleFavorite={[Function]}
+            />
+</section>,
+        ],
+        "className": "CardContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "nextOrPrev": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div />,
+              Array [
+                <Card
+                  cardInfo={Object {}}
+                  currentFav=""
+                  toggleFavorite={[Function]}
+/>,
+                <Card
+                  cardInfo={Object {}}
+                  currentFav=""
+                  toggleFavorite={[Function]}
+/>,
+                <Card
+                  cardInfo={Object {}}
+                  currentFav=""
+                  toggleFavorite={[Function]}
+/>,
+              ],
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "function",
+              "props": Object {
+                "cardInfo": Object {},
+                "currentFav": "",
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "function",
+              "props": Object {
+                "cardInfo": Object {},
+                "currentFav": "",
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "function",
+              "props": Object {
+                "cardInfo": Object {},
+                "currentFav": "",
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "section",
+        },
+      ],
       "type": "div",
     },
   ],

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PageTurn from '../PageTurn/PageTurn';
 import Card from '../Card/Card';
 import './CardContainer.css';
 
@@ -8,7 +9,8 @@ const CardContainer = (props) => {
     chosenCategory,
     cleanedData, 
     toggleFavorite, 
-    currentFavorites
+    currentFavorites,
+    nextOrPrev
   } = props;
 
   let noResults;
@@ -36,6 +38,11 @@ const CardContainer = (props) => {
 
   return (
     <div className='CardContainer'>
+      {
+        chosenCategory &&
+        chosenCategory !== 'favorites' &&
+        <PageTurn nextOrPrev={nextOrPrev} />
+      }
       <section>
         {noResults}
         {cardsToRender}
@@ -50,7 +57,8 @@ CardContainer.propTypes = {
   chosenCategory: string,
   cleanedData: arrayOf(object),
   toggleFavorite: func,
-  currentFavorites: arrayOf(object)
+  currentFavorites: arrayOf(object),
+  nextOrPrev: func
 };
 
 export default CardContainer;
