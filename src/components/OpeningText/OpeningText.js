@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './OpeningText.css'
+import './OpeningText.css';
 
 const OpeningText = ({openingText}) => {
   const {title, episode, crawl, year} = openingText;
-  return(
+  return (
     <div className='fade'>
       <div className='OpeningText'>
         <div className='crawl'>
@@ -17,10 +17,10 @@ const OpeningText = ({openingText}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-const { shape, string, number } = PropTypes
+const { shape, string, number } = PropTypes;
 
 OpeningText.propTypes = {
   openingText: shape({
@@ -29,6 +29,6 @@ OpeningText.propTypes = {
     crawl: string,
     year: string
   })
-}
+};
 
 export default OpeningText;

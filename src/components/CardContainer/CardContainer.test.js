@@ -10,10 +10,10 @@ describe('CardContainer', () => {
       cleanedData={[]}
       toggleFavorite={()=>{}}
       currentFavorites={[]}
-    />)
+    />);
 
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('should match the snapshot if it recieves favorites', () => {
     const wrapper = shallow(<CardContainer
@@ -21,10 +21,10 @@ describe('CardContainer', () => {
       cleanedData={[{}, {}, {}]}
       toggleFavorite={()=>{}}
       currentFavorites={[]}
-    />)
+    />);
 
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('should match the snapshot if it recieves people', () => {
     const wrapper = shallow(<CardContainer
@@ -32,9 +32,9 @@ describe('CardContainer', () => {
       cleanedData={[{}, {}, {}]}
       toggleFavorite={()=>{}}
       currentFavorites={[]}
-    />)
+    />);
 
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
-})
+});
