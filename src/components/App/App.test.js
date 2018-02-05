@@ -1,11 +1,17 @@
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import App from './App';
-import mockData from '../../mockData'
+import mockData from '../../mockData';
+
 
 describe('App', () => {  
   let wrapper;
+  global.localStorage = {
+    getItem() {},
+    setItem() {}
+  };
 
   beforeEach(() => {
     wrapper = shallow(<App />)

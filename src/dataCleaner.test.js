@@ -13,18 +13,22 @@ describe('DataCleaner', () => {
 
   describe('getOpeningText', () => {
     it('Should determine which cleaning function to run', () => {
+      cleaner.peopleCleaner = jest.fn()
+      cleaner.vehicleCleaner = jest.fn()
+      cleaner.planetCleaner = jest.fn()
+      cleaner.getOpeningText = jest.fn()
 
       cleaner.cleanData('people', [])
-      expect(cleaner.peopleCleaner).toHaveBeenCalled
+      expect(cleaner.peopleCleaner).toHaveBeenCalled()
 
       cleaner.cleanData('vehicles', [])
-      expect(cleaner.vehicleCleaner).toHaveBeenCalled
+      expect(cleaner.vehicleCleaner).toHaveBeenCalled()
 
       cleaner.cleanData('planets', [])
-      expect(cleaner.planetCleaner).toHaveBeenCalled
+      expect(cleaner.planetCleaner).toHaveBeenCalled()
 
       cleaner.cleanData('opening', [])
-      expect(cleaner.getOpeningText).toHaveBeenCalled
+      expect(cleaner.getOpeningText).toHaveBeenCalled()
     
     })
 

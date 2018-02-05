@@ -26,71 +26,167 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h1>
-          Episode 
-          4
-</h1>,
-        <h2>
-          The super long intro...
-</h2>,
-        <p>
-          Return of the Jedi
-           - 
-          04/15/1990
-</p>,
-      ],
+      "children": <div
+        className="OpeningText"
+>
+        <div
+                className="crawl"
+        >
+                <div
+                        className="title"
+                >
+                        <p>
+                                Episode 
+                                4
+                        </p>
+                        <h1>
+                                Return of the Jedi
+                        </h1>
+                </div>
+                <h2>
+                        The super long intro...
+                </h2>
+                <h2>
+                        04/15/1990
+                </h2>
+        </div>
+</div>,
+      "className": "fade",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="crawl"
+>
+          <div
+                    className="title"
+          >
+                    <p>
+                              Episode 
+                              4
+                    </p>
+                    <h1>
+                              Return of the Jedi
+                    </h1>
+          </div>
+          <h2>
+                    The super long intro...
+          </h2>
+          <h2>
+                    04/15/1990
+          </h2>
+</div>,
+        "className": "OpeningText",
+      },
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "Episode ",
-            4,
+            <div
+              className="title"
+>
+              <p>
+                            Episode 
+                            4
+              </p>
+              <h1>
+                            Return of the Jedi
+              </h1>
+</div>,
+            <h2>
+              The super long intro...
+</h2>,
+            <h2>
+              04/15/1990
+</h2>,
           ],
+          "className": "crawl",
         },
         "ref": null,
         "rendered": Array [
-          "Episode ",
-          4,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  Episode 
+                  4
+</p>,
+                <h1>
+                  Return of the Jedi
+</h1>,
+              ],
+              "className": "title",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Episode ",
+                    4,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Episode ",
+                  4,
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Return of the Jedi",
+                },
+                "ref": null,
+                "rendered": "Return of the Jedi",
+                "type": "h1",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "The super long intro...",
+            },
+            "ref": null,
+            "rendered": "The super long intro...",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "04/15/1990",
+            },
+            "ref": null,
+            "rendered": "04/15/1990",
+            "type": "h2",
+          },
         ],
-        "type": "h1",
+        "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "The super long intro...",
-        },
-        "ref": null,
-        "rendered": "The super long intro...",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Return of the Jedi",
-            " - ",
-            "04/15/1990",
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Return of the Jedi",
-          " - ",
-          "04/15/1990",
-        ],
-        "type": "p",
-      },
-    ],
+      "type": "div",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -99,71 +195,167 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <h1>
-            Episode 
-            4
-</h1>,
-          <h2>
-            The super long intro...
-</h2>,
-          <p>
-            Return of the Jedi
-             - 
-            04/15/1990
-</p>,
-        ],
+        "children": <div
+          className="OpeningText"
+>
+          <div
+                    className="crawl"
+          >
+                    <div
+                              className="title"
+                    >
+                              <p>
+                                        Episode 
+                                        4
+                              </p>
+                              <h1>
+                                        Return of the Jedi
+                              </h1>
+                    </div>
+                    <h2>
+                              The super long intro...
+                    </h2>
+                    <h2>
+                              04/15/1990
+                    </h2>
+          </div>
+</div>,
+        "className": "fade",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="crawl"
+>
+            <div
+                        className="title"
+            >
+                        <p>
+                                    Episode 
+                                    4
+                        </p>
+                        <h1>
+                                    Return of the Jedi
+                        </h1>
+            </div>
+            <h2>
+                        The super long intro...
+            </h2>
+            <h2>
+                        04/15/1990
+            </h2>
+</div>,
+          "className": "OpeningText",
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Episode ",
-              4,
+              <div
+                className="title"
+>
+                <p>
+                                Episode 
+                                4
+                </p>
+                <h1>
+                                Return of the Jedi
+                </h1>
+</div>,
+              <h2>
+                The super long intro...
+</h2>,
+              <h2>
+                04/15/1990
+</h2>,
             ],
+            "className": "crawl",
           },
           "ref": null,
           "rendered": Array [
-            "Episode ",
-            4,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    Episode 
+                    4
+</p>,
+                  <h1>
+                    Return of the Jedi
+</h1>,
+                ],
+                "className": "title",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Episode ",
+                      4,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Episode ",
+                    4,
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Return of the Jedi",
+                  },
+                  "ref": null,
+                  "rendered": "Return of the Jedi",
+                  "type": "h1",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "The super long intro...",
+              },
+              "ref": null,
+              "rendered": "The super long intro...",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "04/15/1990",
+              },
+              "ref": null,
+              "rendered": "04/15/1990",
+              "type": "h2",
+            },
           ],
-          "type": "h1",
+          "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "The super long intro...",
-          },
-          "ref": null,
-          "rendered": "The super long intro...",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Return of the Jedi",
-              " - ",
-              "04/15/1990",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Return of the Jedi",
-            " - ",
-            "04/15/1990",
-          ],
-          "type": "p",
-        },
-      ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],

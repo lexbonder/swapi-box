@@ -48,6 +48,7 @@ ShallowWrapper {
           Vehicles
 </button>,
       ],
+      "className": "Control",
     },
     "ref": null,
     "rendered": Array [
@@ -148,6 +149,7 @@ ShallowWrapper {
             Vehicles
 </button>,
         ],
+        "className": "Control",
       },
       "ref": null,
       "rendered": Array [

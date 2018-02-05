@@ -7,85 +7,113 @@ import fetchApi from '../../apiFetcher';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       openingText: {},
       chosenCategory: '',
       cleanedData: [],
       favorites: [],
-      numFav: 0,
-    }
-    this.cleaner = new DataCleaner(fetchApi)
+      numFav: 0
+    };
+    this.cleaner = new DataCleaner(fetchApi);
   }
 
   componentDidMount = () => {
-    const episodeNumber = Math.ceil(Math.random() * 7)
-    this.getMovieCrawl(episodeNumber)
+    const episodeNumber = Math.ceil(Math.random() * 7);
+    this.getMovieCrawl(episodeNumber);
+    this.getFavoritesFromStorage();
   }
 
   getMovieCrawl = async (episodeNumber) => {
-    const movieInfo = await fetchApi(`https://swapi.co/api/films/${episodeNumber}/`)
-    const openingText = await this.cleaner.cleanData('opening', movieInfo)
+    const movieInfo = await fetchApi(
+      `https://swapi.co/api/films/${episodeNumber}/`
+    );
+    const openingText = await this.cleaner.cleanData('opening', movieInfo);
     this.setState({openingText});
   }
 
   toggleFavorite = (event) => {
-    const clicked = event.target.name
-    const clickedObject = this.state.cleanedData.find(object => object.name === clicked)
-    const exists = this.state.favorites.filter(object => object.name === clicked)
+    const clicked = event.target.name;
+    const clickedObject = this.state.cleanedData.find(
+      object => object.name === clicked
+    );
+    const exists = this.state.favorites.filter(
+      object => object.name === clicked
+    );
     if (!exists.length) {
-      this.addFavorite(clickedObject)
+      this.addFavorite(clickedObject);
     } else {
-      this.removeFavorite(clickedObject)
+      this.removeFavorite(clickedObject);
     }
   }
 
   addFavorite = (clickedObject) => {
-    let numFav = this.state.favorites.length
-    numFav++
-    this.setState({favorites: [...this.state.favorites, clickedObject], numFav})
+    let numFav = this.state.favorites.length;
+    numFav++;
+    const favorites = [...this.state.favorites, clickedObject];
+    this.setState({favorites, numFav});
+    this.sendToLocalStorage(favorites);
   }
 
   removeFavorite = (clickedObject) => {
-    const remainingFavorites = this.state.favorites.filter(object => object.name !== clickedObject.name)
-    let numFav = remainingFavorites.length
-    this.setState({favorites: remainingFavorites, numFav})
+    const favorites = this.state.favorites.filter(
+      object => object.name !== clickedObject.name
+    );
+    let numFav = favorites.length;
+    this.setState({favorites, numFav});
+    this.sendToLocalStorage(favorites);
   }
+
+  sendToLocalStorage = (favorites) => {
+    const stringified = JSON.stringify(favorites);
+    localStorage.setItem('favorites', stringified);
+  }
+
+  getFavoritesFromStorage = () => {
+    if (localStorage.favorites) {
+      const fromLocal = localStorage.getItem('favorites');
+      const favorites = JSON.parse(fromLocal);
+      const numFav = favorites.length;
+      this.setState({favorites, numFav});
+    }
+  } 
 
   handleClick = (event) => {
     const chosenCategory = event.target.name;
     if (chosenCategory === 'favorites') {
-      this.getFavorites(chosenCategory)
+      this.getFavorites(chosenCategory);
     } else {
-      this.getCards(chosenCategory)
+      this.getCards(chosenCategory);
     }
   }
 
   getFavorites = (chosenCategory) => {
-    this.setState({chosenCategory, cleanedData: this.state.favorites})
+    this.setState({chosenCategory, cleanedData: this.state.favorites});
   }
 
   getCards = async (chosenCategory) => {
-    const {results} = await fetchApi(`https://swapi.co/api/${chosenCategory}/`)
-    const cleanedData = await this.cleaner.cleanData(chosenCategory, results)
-    this.setState({ chosenCategory, cleanedData })
+    const {results} = await fetchApi(`https://swapi.co/api/${chosenCategory}/`);
+    const cleanedData = await this.cleaner.cleanData(chosenCategory, results);
+    this.setState({ chosenCategory, cleanedData });
   }
 
   render() {
     return (
       <div className="App">
-        <h1>SWAPIbox</h1>
         <OpeningText openingText={this.state.openingText} />
-        <Control
-          handleClick={this.handleClick}
-          numFav={this.state.numFav}
-        />
-        <CardContainer
-          chosenCategory={this.state.chosenCategory}
-          cleanedData={this.state.cleanedData}
-          toggleFavorite={this.toggleFavorite}
-        />
+        <section className='bottom-half'>
+          <Control
+            handleClick={this.handleClick}
+            numFav={this.state.numFav}
+          />
+          <CardContainer
+            chosenCategory={this.state.chosenCategory}
+            cleanedData={this.state.cleanedData}
+            toggleFavorite={this.toggleFavorite}
+            currentFavorites={this.state.favorites}
+          />
+        </section>
       </div>
     );
   }

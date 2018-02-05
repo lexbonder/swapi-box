@@ -1,0 +1,48 @@
+.Card {
+  border: 1px solid #4A53FE;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-align: center;
+  width: 261px;
+  color: #fff;
+  position: relative;
+}
+
+.Card button {
+  position: absolute;
+  background-color: transparent;
+  outline: none;
+  right: 5px;
+  top: 5px;
+  color: #4A53FE;
+  font-size: 20px;
+  border: none;
+}
+
+.Card button:hover {
+  text-shadow: #feda4a 0 0 10px ;
+}
+
+.Card button:active {
+  text-shadow: none;
+}
+
+.Card ul {
+  text-align: left;
+  list-style: circle;
+  max-height: 87px;
+  overflow: auto;
+  border: 1px solid #feda4a;
+  border-radius: 20px;
+}
+
+.favorite {
+  box-shadow: 0px 0px 20px #feda4a;
+  border: 1px solid #feda4a;
+}
+
+.favorite button {
+  color: #feda4a;
+}

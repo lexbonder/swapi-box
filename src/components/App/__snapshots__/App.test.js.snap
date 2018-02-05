@@ -18,37 +18,28 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
-          SWAPIbox
-</h1>,
         <OpeningText
           openingText={Object {}}
 />,
-        <Control
-          handleClick={[Function]}
-          numFav={0}
-/>,
-        <CardContainer
-          chosenCategory=""
-          cleanedData={Array []}
-          toggleFavorite={[Function]}
-/>,
+        <section
+          className="bottom-half"
+>
+          <Control
+                    handleClick={[Function]}
+                    numFav={0}
+          />
+          <CardContainer
+                    chosenCategory=""
+                    cleanedData={Array []}
+                    currentFavorites={Array []}
+                    toggleFavorite={[Function]}
+          />
+</section>,
       ],
       "className": "App",
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "SWAPIbox",
-        },
-        "ref": null,
-        "rendered": "SWAPIbox",
-        "type": "h1",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -63,27 +54,52 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "handleClick": [Function],
-          "numFav": 0,
+          "children": Array [
+            <Control
+              handleClick={[Function]}
+              numFav={0}
+/>,
+            <CardContainer
+              chosenCategory=""
+              cleanedData={Array []}
+              currentFavorites={Array []}
+              toggleFavorite={[Function]}
+/>,
+          ],
+          "className": "bottom-half",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "chosenCategory": "",
-          "cleanedData": Array [],
-          "toggleFavorite": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "handleClick": [Function],
+              "numFav": 0,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "chosenCategory": "",
+              "cleanedData": Array [],
+              "currentFavorites": Array [],
+              "toggleFavorite": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "section",
       },
     ],
     "type": "div",
@@ -95,37 +111,28 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
-            SWAPIbox
-</h1>,
           <OpeningText
             openingText={Object {}}
 />,
-          <Control
-            handleClick={[Function]}
-            numFav={0}
-/>,
-          <CardContainer
-            chosenCategory=""
-            cleanedData={Array []}
-            toggleFavorite={[Function]}
-/>,
+          <section
+            className="bottom-half"
+>
+            <Control
+                        handleClick={[Function]}
+                        numFav={0}
+            />
+            <CardContainer
+                        chosenCategory=""
+                        cleanedData={Array []}
+                        currentFavorites={Array []}
+                        toggleFavorite={[Function]}
+            />
+</section>,
         ],
         "className": "App",
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "SWAPIbox",
-          },
-          "ref": null,
-          "rendered": "SWAPIbox",
-          "type": "h1",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -140,27 +147,52 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "handleClick": [Function],
-            "numFav": 0,
+            "children": Array [
+              <Control
+                handleClick={[Function]}
+                numFav={0}
+/>,
+              <CardContainer
+                chosenCategory=""
+                cleanedData={Array []}
+                currentFavorites={Array []}
+                toggleFavorite={[Function]}
+/>,
+            ],
+            "className": "bottom-half",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "chosenCategory": "",
-            "cleanedData": Array [],
-            "toggleFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "handleClick": [Function],
+                "numFav": 0,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "chosenCategory": "",
+                "cleanedData": Array [],
+                "currentFavorites": Array [],
+                "toggleFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "section",
         },
       ],
       "type": "div",
