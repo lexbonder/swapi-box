@@ -35,6 +35,6 @@ setupTests.js](https://github.com/facebookincubator/create-react-app/blob/master
 
 The tests are a compilation of unit and integration tests to simulate the methods and events happening in the application.
 
-## Project layout
+## Screenshots
 
 ![Landing Page](screenshots/landing-page.png)
